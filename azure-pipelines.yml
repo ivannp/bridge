@@ -10,10 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- checkout: self
+  submodules: true
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- bash:
+  workingDirectory: external/dds/src
+  displayName: 'Build DDS Library'
+  failOnStderr: true
+  script: |
+    cp Makefiles/Makefile_linux_static Makefile
+    make
