@@ -20,5 +20,5 @@ steps:
     failOnStderr: true
     script: |
       cp Makefiles/Makefile_linux_static Makefile
-      make
+      THREADING="-DDDS_THREADS_STL" THREAD_LINK="" THREAD_COMPILE="" make -e -j
     targetType: 'inline'
