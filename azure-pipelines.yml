@@ -20,3 +20,4 @@ steps:
   script: |
     cp Makefiles/Makefile_linux_static Makefile
     make
+  targetType: Inline
