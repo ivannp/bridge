@@ -14,10 +14,11 @@ steps:
   submodules: true
 
 - task: Bash@1
-  workingDirectory: external/dds/src
-  displayName: 'Build DDS Library'
-  failOnStderr: true
-  script: |
-    cp Makefiles/Makefile_linux_static Makefile
-    make
-  targetType: 'inline'
+  inputs:
+    workingDirectory: external/dds/src
+    displayName: 'Build DDS Library'
+    failOnStderr: true
+    script: |
+      cp Makefiles/Makefile_linux_static Makefile
+      make
+    targetType: 'inline'
