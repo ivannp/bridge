@@ -33,3 +33,5 @@ list(
 add_subdirectory(${EXTERNAL_MODULES}/googletest)
 
 enable_testing()
+
+add_subdirectory(bridge)
