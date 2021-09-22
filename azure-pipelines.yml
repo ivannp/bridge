@@ -13,7 +13,7 @@ steps:
 - checkout: self
   submodules: true
 
-- bash:
+- task: Bash@1
   workingDirectory: external/dds/src
   displayName: 'Build DDS Library'
   failOnStderr: true
